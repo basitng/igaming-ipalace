@@ -1,8 +1,8 @@
-import { createTheme as createMuiTheme } from '@mui/material';
-import { createPalette } from './create-palette';
-import { createComponents } from './create-components';
-import { createShadows } from './create-shadows';
-import { createTypography } from './create-typography';
+import { createTheme as createMuiTheme } from "@mui/material";
+import { createPalette } from "./create-palette";
+import { createComponents } from "./create-components";
+import { createShadows } from "./create-shadows";
+import { createTypography } from "./create-typography";
 
 export function createTheme() {
   const palette = createPalette();
@@ -17,15 +17,19 @@ export function createTheme() {
         sm: 600,
         md: 900,
         lg: 1200,
-        xl: 1440
-      }
+        xl: 1440,
+      },
     },
+    // @ts-ignore
     components,
+    // @ts-ignore
     palette,
+    // @ts-ignore
     shadows,
     shape: {
-      borderRadius: 8
+      borderRadius: 8,
     },
-    typography
+    // @ts-ignore
+    typography,
   });
 }
