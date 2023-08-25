@@ -15,7 +15,6 @@ export default function Counter({
     <div className="w-full h-[20vh] rounded-md bg-slate-700 flex justify-center items-center flex-col">
       <h3 className="text-white md:text-4xl text-2xl overflow-hidden">
         <CountUp
-          ref={countUpRef}
           start={0}
           end={count}
           delay={1}
