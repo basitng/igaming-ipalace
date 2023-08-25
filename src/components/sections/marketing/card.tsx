@@ -1,30 +1,28 @@
-import React, { useState } from "react";
-import framer, {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-} from "framer-motion";
+import React from "react";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { Button, Typography } from "@mui/material";
 
-export default function AnimatedCard({
-  title,
-  n,
-  content,
-}: {
+interface AnimatedCardProps {
   title: string;
   n: number;
   content: string;
-}) {
+}
+
+const AnimatedCard: React.FC<AnimatedCardProps> = ({ title, n, content }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  console.log("Render");
-  const handleMouseMove = ({ clientX, clientY, currentTarget }: MouseEvent) => {
+  const handleMouseMove = ({
+    clientX,
+    clientY,
+    currentTarget,
+  }: React.MouseEvent) => {
     const { left, top } = currentTarget.getBoundingClientRect();
 
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   };
+
   return (
     <div className="mx-3 md:mx-10 my-8 cursor-pointer">
       <div
@@ -82,4 +80,6 @@ export default function AnimatedCard({
       </div>
     </div>
   );
-}
+};
+
+export default AnimatedCard;
